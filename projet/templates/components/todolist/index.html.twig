@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes listes de tâches{% endblock %}
+
+{% block body %}
+    <h1>Mes listes de tâches</h1>
+
+    <ul>
+        {% for todoList in todoLists %}
+            <li>{{ todoList.name }}</li>
+        {% else %}
+            <li>Aucune liste de tâches pour le moment.</li>
+        {% endfor %}
+    </ul>
+    
+    <a href="{{ path('create_todolist') }}">Créer une nouvelle liste</a>
+{% endblock %}
